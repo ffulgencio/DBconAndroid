@@ -6,9 +6,9 @@ import android.provider.BaseColumns;
  * Created by francis on 15-Feb-17.
  */
 
-public final class EmpleadoContact {
+public final class EmpleadoContract {
 
-    private EmpleadoContact(){
+    private EmpleadoContract(){
 
     }
 
