@@ -14,16 +14,17 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public static final int VERSION = 2 ;
 
-    public static final String CREAR_TABLA_EMPLEADOS=
-            "CREATE TABLE " + EmpleadoContact.Empleado.TABLA +"("+ EmpleadoContact.Empleado._ID
-            + " INT PRIMARY KEY, "+ EmpleadoContact.Empleado.COLUMN_NOMBRE +" TEXT,"
-            + EmpleadoContact.Empleado.COLUMN_APELLIDO +  " TEXT,"
-            + EmpleadoContact.Empleado.COLUMN_CEDULA + " TEXT,"
-            + EmpleadoContact.Empleado.COLUMN_CARGO  + " TEXT,"
-            + EmpleadoContact.Empleado.COLUMN_SUELDO + " TEXT);";
+    public static final String CREAR_TABLA_EMPLEADOS =
+            "CREATE TABLE " + EmpleadoContract.Empleado.TABLA +"("
+            + EmpleadoContract.Empleado._ID + " INTEGER PRIMARY KEY, "
+            + EmpleadoContract.Empleado.COLUMN_NOMBRE +" TEXT,"
+            + EmpleadoContract.Empleado.COLUMN_APELLIDO +  " TEXT,"
+            + EmpleadoContract.Empleado.COLUMN_CEDULA + " TEXT,"
+            + EmpleadoContract.Empleado.COLUMN_CARGO  + " TEXT,"
+            + EmpleadoContract.Empleado.COLUMN_SUELDO + " TEXT)";
 
     public static final String BORRAR_TABLA_EMPLEADOS =
-            "DROP TABLE " + NOMBRE_DB + ';';
+            "DROP TABLE " + EmpleadoContract.Empleado.TABLA+ ';';
 
     public DBHelper(Context context) {
         super(context, NOMBRE_DB, null, VERSION);

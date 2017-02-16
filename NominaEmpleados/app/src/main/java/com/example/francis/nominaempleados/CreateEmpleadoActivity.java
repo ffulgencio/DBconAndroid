@@ -37,12 +37,12 @@ public class CreateEmpleadoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ContentValues c = new ContentValues();
-                c.put(EmpleadoContact.Empleado.COLUMN_NOMBRE, String.valueOf(etNombre.getText()));
-                c.put(EmpleadoContact.Empleado.COLUMN_APELLIDO, String.valueOf(etApellido.getText()));
-                c.put(EmpleadoContact.Empleado.COLUMN_CARGO, String.valueOf(etCargo.getText()));
-                c.put(EmpleadoContact.Empleado.COLUMN_SUELDO, String.valueOf(etSueldo.getText()));
+                c.put(EmpleadoContract.Empleado.COLUMN_NOMBRE, String.valueOf(etNombre.getText()));
+                c.put(EmpleadoContract.Empleado.COLUMN_APELLIDO, String.valueOf(etApellido.getText()));
+                c.put(EmpleadoContract.Empleado.COLUMN_CARGO, String.valueOf(etCargo.getText()));
+                c.put(EmpleadoContract.Empleado.COLUMN_SUELDO, String.valueOf(etSueldo.getText()));
 
-                db.insert(EmpleadoContact.Empleado.TABLA,null,c);
+                db.insert(EmpleadoContract.Empleado.TABLA,null,c);
             }
         });
 

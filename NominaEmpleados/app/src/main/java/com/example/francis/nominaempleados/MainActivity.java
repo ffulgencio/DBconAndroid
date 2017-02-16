@@ -27,32 +27,13 @@ public class MainActivity extends AppCompatActivity {
         try{
             h = new DBHelper(getApplicationContext());
             db = h.getReadableDatabase();
-            //LlenarLista(db);
+            LlenarLista(db);
 
 
         }catch (Exception e){
             MessageBox.Show(this,e.toString());
         }
-        try{
-        listaEmpleados = (ListView) findViewById(R.id.lvEmpleados);
 
-            Cursor empleados = db.rawQuery("select Nombre from "+ EmpleadoContact.Empleado.TABLA,null);
-            //Arr
-            String[] items =new String[empleados.getCount()];
-            int i =0;
-            if (empleados.moveToFirst()){
-                do{
-                    items[i]= empleados.getString(i);
-                    i++;
-                }while(empleados.moveToNext());
-            }
-
-            ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_expandable_list_item_1, items);
-            listaEmpleados.setAdapter(adaptador);
-            db.close();
-        }catch (Exception e){
-            MessageBox.Show(getApplicationContext(),e.toString());
-        }
 
 
 
@@ -67,8 +48,35 @@ public class MainActivity extends AppCompatActivity {
         }); // */
 
 
+
+
     }
-/*
+
+
+    public void LlenarLista(SQLiteDatabase db){
+        try{
+            listaEmpleados = (ListView) findViewById(R.id.lvEmpleados);
+
+            Cursor empleados = db.rawQuery("select Nombre from "+ EmpleadoContract.Empleado.TABLA,null);
+            //Arr
+            String[] items =new String[empleados.getCount()];
+            int i =0;
+            if (empleados.moveToFirst()){
+                do{
+                    items[i]= empleados.getString(0);
+                    i++;
+                }while(empleados.moveToNext());
+            }
+
+            ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_expandable_list_item_1, items);
+            listaEmpleados.setAdapter(adaptador);
+            db.close();
+        }catch (Exception e){
+            MessageBox.Show(getApplicationContext(),e.toString());
+            db.close();
+        }
+    }// */
+
     @Override protected void onResume() {
 
         super.onResume();
@@ -76,32 +84,15 @@ public class MainActivity extends AppCompatActivity {
             SQLiteDatabase data = h.getReadableDatabase();
             LlenarLista(data);
             MessageBox.Show(this, "onResume");
-        }catch (Exception e){
-            MessageBox.Show(this,e.toString());
+        } catch (Exception e) {
+            MessageBox.Show(this, e.toString());
         }
     }
+/*
 
-    public void LlenarLista(SQLiteDatabase db){
-        listaEmpleados = (ListView) findViewById(R.id.lvEmpleados);
-        try{
-                Cursor empleados = db.rawQuery("select Nombre from "+ EmpleadoContact.Empleado.TABLA,null);
-                //Arr
-                String[] items =new String[empleados.getCount()];
-                int i =0;
-                if (empleados.moveToFirst()){
-                    do{
-                        items[i]= empleados.getString(i);
-                        i++;
-                    }while(empleados.moveToNext());
-                }
+    }//*/
 
-                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_expandable_list_item_1, items);
-                listaEmpleados.setAdapter(adaptador);
-                db.close();
-        }catch (Exception e){
-            MessageBox.Show(getApplicationContext(),e.toString());
-        }
-    }// */
+
 
 
 }
