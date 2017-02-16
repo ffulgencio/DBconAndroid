@@ -19,7 +19,7 @@
         android:layout_alignParentTop="true">
 
         <TextView
-            android:text="TextView"
+            android:text="Nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtNombre"
@@ -35,7 +35,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:text="TextView"
+            android:text="Apellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtApellido"
@@ -51,7 +51,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:text="TextView"
+            android:text="Cargo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtCargo"
@@ -67,7 +67,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:text="TextView"
+            android:text="Sueldo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtSueldo"
@@ -86,6 +86,7 @@
             android:text="Agregar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnAgregar" />
+            android:id="@+id/btnAgregar"
+            android:background="@android:color/holo_blue_light" />
     </LinearLayout>
 </RelativeLayout>
